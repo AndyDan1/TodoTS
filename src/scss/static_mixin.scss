@@ -1,0 +1,173 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+button,
+fieldset,
+form,
+input,
+label,
+legend,
+textarea,
+select,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+a,
+b,
+i,
+u,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  vertical-align: baseline;
+  background: none;
+  white-space: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  color: #1C1C1C;
+  font-family: 'PT Sans', sans-serif;
+}
+
+form {
+  height: inherit;
+}
+
+iframe {
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #535353 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+}
+
+A:link,
+A:active,
+A:hover,
+A:visited {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html, body {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+//__________
+
+@mixin fb($y: center, $x: false, $w: false) {
+  @if $w {
+    flex-wrap: $w;
+  }
+  @if $x {
+    justify-content: $x;
+  }
+
+  display: flex;
+  align-items: $y;
+
+}
+
+@mixin w($w: auto, $h: none) {
+  @if $w != 100% {
+    max-width: $w + rem;
+    width: 100%;
+  }
+  @if $w == 100% {
+    width: 100%;
+  }
+
+  @if $h != none {
+    height: $h + rem;
+  }
+
+  @if $w == $h {
+    min-width: $w + rem;
+    min-height: $h + rem;
+  }
+}
+
+@mixin font( $size: 1.8, $h: 2.8, $weight: normal, $fs: normal) {
+  font-size: $size + rem;
+  line-height: $h + rem;
+  font-weight: $weight;
+  font-style: $fs;
+}
